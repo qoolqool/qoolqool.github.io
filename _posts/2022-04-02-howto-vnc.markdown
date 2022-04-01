@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "Howto VNC in Linux"
+date:   2022-04-02 07:31:00 +0800
+categories: [remoteaccess,linux]
+---
+### Requirement
+- Setup VNC in Linux for GUI Remote Access
+- Start with systemd
+
+### Method
+- TigerVNC
+  - UserSpace
+  - systemd
+
+#### Flow
+
+
+### Procedure
+1) Download & Install App
+   ```
+   sudo apt install -y tigervnc-standalone-server
+   ```
+2) Setup configuration
+   ```
+   - Create vnc folder for user
+     mkdir -p ~/.vnc/
+
+   - Get startup script (Assuming using xfce for resources saving)
+     wget https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project/-/raw/master/nethunter-fs/profiles/xstartup -O ~/.vnc/xstartup
+     - ensure the following command to replace the original one under xfce section
+       exec /usr/bin/startxfce4
+
+   - Test from userspace
+     - vncserver :1 (Bind to localhost)
+     - vncserver -localhost no :1 (Bind to 0.0.0.0)
+
+   ```
+3) Create systemd unit file to have it start automatically
+  - File Location: /etc/systemd/system/vncserver@.service
+  ```
+  [Unit]
+  Description=Remote desktop service (VNC)
+
+  [Service]
+  Type=forking
+  ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+  ExecStart=/sbin/runuser -l qool -c "/usr/bin/vncserver -localhost no %i"
+  ExecStop=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+
+  [Install]
+  WantedBy=multi-user.target
+
+  ```
+  > Note: have to run the startup program with specific username.
+
+  - Run as root:
+    ```
+    systemctl daemon-reload
+    systemctl start vncserver@:1
+    systemctl enable vncserver@:1
+    ```
+
+
+### Limitation
+1) VNC is specific to targeted user.
+2) Each session needs to bind to different port
+3) Cannot have generic systemd unit file for vncserver
