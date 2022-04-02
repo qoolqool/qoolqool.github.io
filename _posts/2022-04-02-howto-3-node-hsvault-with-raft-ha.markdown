@@ -82,23 +82,28 @@ To setup 3-node Hashicorp Vault solution with Raft HA on TLS communication chann
     ui = true
     ```
   - Node2 & Node3
+
     ```
     Similar to Node1. Just replace
       - cluster_addr to node specific FQDN defined in DNS
       - leader_tls_servername to node specific FQDN defined in DNS
     ```
+
 6) Setup Environment on all 3 nodes
+
    ```
    export VAULT_CACERT=/opt/vault/tls/ca.pem
    ```
 
 7) Initialize Vault on Primary HSVault Node
   - Execute the following command on Primary HSVaule Node. ie: vault01
+
     ```
     vault operator init
     ```
 
 8) Unseal all 3 HSVault Node
+
    ```
    vault operator unseal
    ```
