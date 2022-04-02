@@ -38,6 +38,7 @@ categories: [remoteaccess,linux]
    ```
 3) Create systemd unit file to have it start automatically
   - File Location: /etc/systemd/system/vncserver@.service
+
   ```
   [Unit]
   Description=Remote desktop service (VNC)
@@ -52,9 +53,11 @@ categories: [remoteaccess,linux]
   WantedBy=multi-user.target
 
   ```
+
   > Note: have to run the startup program with specific username.
 
   - Run as root:
+  
     ```
     systemctl daemon-reload
     systemctl start vncserver@:1
