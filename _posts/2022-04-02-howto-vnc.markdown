@@ -18,10 +18,12 @@ categories: [remoteaccess,linux]
 
 ### Procedure
 1) Download & Install App
+
    ```
    sudo apt install -y tigervnc-standalone-server
    ```
 2) Setup configuration
+
    ```
    - Create vnc folder for user
      mkdir -p ~/.vnc/
@@ -39,25 +41,25 @@ categories: [remoteaccess,linux]
 3) Create systemd unit file to have it start automatically
   - File Location: /etc/systemd/system/vncserver@.service
 
-  ```
-  [Unit]
-  Description=Remote desktop service (VNC)
+    ```
+    [Unit]
+    Description=Remote desktop service (VNC)
 
-  [Service]
-  Type=forking
-  ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-  ExecStart=/sbin/runuser -l qool -c "/usr/bin/vncserver -localhost no %i"
-  ExecStop=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+    [Service]
+    Type=forking
+    ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+    ExecStart=/sbin/runuser -l qool -c "/usr/bin/vncserver -localhost no %i"
+    ExecStop=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
 
-  [Install]
-  WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
-  ```
+    ```
 
   > Note: have to run the startup program with specific username.
 
   - Run as root:
-  
+
     ```
     systemctl daemon-reload
     systemctl start vncserver@:1
