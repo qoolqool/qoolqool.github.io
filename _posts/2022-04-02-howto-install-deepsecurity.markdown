@@ -15,12 +15,12 @@ categories: [security]
   ```
   yum install postgresql-server
   ```
+
 - Prepare the DB
 
   ```
   sudo su - postgres -c psql
 
-  -----
   postgres=# create database "dsmdb";
   CREATE DATABASE
   postgres=# create role "dsmroot" with password 'mysecurepassword' login;
@@ -28,7 +28,7 @@ categories: [security]
   postgres=# grant all on database dsmdb to dsmroot;
   GRANT
   postgres=# grant connect on database "dsmdb" to "dsmroot";
-  -----
+  
   ```
 
 #### Silent Installation

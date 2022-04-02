@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Howto create self-signed SAN TLS cert for HSVault"
+title:  "Howto create self-signed SAN TLS cert for HSVault with openssl"
 date:   2022-04-02 07:44:00 +0800
 categories: [security]
 ---
