@@ -11,10 +11,12 @@ categories: [security]
 ### Method
 #### PostgreSQL
 - Use packages included in the distribution
+
   ```
   yum install postgresql-server
   ```
 - Prepare the DB
+
   ```
   sudo su - postgres -c psql
 
