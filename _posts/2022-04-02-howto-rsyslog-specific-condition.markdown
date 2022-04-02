@@ -13,7 +13,7 @@ To sent syslog from specific folder and specific pattern to remote syslog server
 - redhat linux
 
 #### Flow
-![](rsyslog-flow.png)
+![](/static/img/_posts/rsyslog-flow.png)
 
 #### Procedure
 1) Add a rule file in `/etc/rsyslog.d` with the following content
