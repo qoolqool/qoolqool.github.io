@@ -7,7 +7,7 @@ categories: [security,hashicorp]
 ### Requirement
 To setup 3-node Hashicorp Vault solution with Raft HA on TLS communication channel
 
-### Method
+### Components
 - HS Vault
 - openssl
 - raft HA
@@ -81,7 +81,7 @@ To setup 3-node Hashicorp Vault solution with Raft HA on TLS communication chann
 
     ui = true
     ```
-  - Node2 & Node3
+    - Node2 & Node3
 
     ```
     Similar to Node1. Just replace
