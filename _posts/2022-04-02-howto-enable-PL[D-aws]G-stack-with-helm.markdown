@@ -108,6 +108,7 @@ categories: [k8s,grafana]
     * query-frontend
     ```
 6) Enable Grafana
+
   ```
   helm upgrade --install grafana  grafana/grafana -n monitoring
   W0408 15:01:56.874588   67010 warnings.go:70] policy/v1beta1 PodSecurityPolicy is deprecated in v1.21+, unavailable in v1.25+
