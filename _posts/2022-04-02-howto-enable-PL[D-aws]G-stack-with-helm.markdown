@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Howto enable Prometheus, Loki-distributed with AWS S3 storage, Grafana stack using Helm Chart"
+title:  "Howto enable Promtail, Loki-distributed with AWS S3 storage & Grafana using Helm Chart"
 date:   2022-04-08 22:38:00 +0800
 categories: [k8s,grafana]
 ---
