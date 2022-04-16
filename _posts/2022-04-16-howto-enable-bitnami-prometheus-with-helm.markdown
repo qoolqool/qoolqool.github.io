@@ -2,7 +2,7 @@
 layout: post
 title:  "Howto enable Bitnami Prometheus Operator using Helm Chart"
 date:   2022-04-16 17:18:00 +0800
-categories: [k8s,grafana]
+categories: [k8s]
 ---
 ### Requirement
 - To enable kubernetes cluster observability with minimum effort
@@ -11,10 +11,10 @@ categories: [k8s,grafana]
 - helm
 - kubernetes
 - prometheus
-- Grafana
+
 
 #### Procedure
-1) Get official helm chart from Grafana
+1) Get official helm chart from Bitnami
 
   ```
   helm repo add bitnami https://charts.bitnami.com/bitnami
