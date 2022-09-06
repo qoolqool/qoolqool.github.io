@@ -4,6 +4,7 @@ title:  "Kubespray Howto"
 date:   2022-09-06 12:59:00 +0800
 categories: [linux,ansible,k8s]
 ---
+
 <details><summary>
 K8S Cluster Installation</summary>
 <pre><code>
@@ -5621,8 +5622,10 @@ download : download_file | Download item ---------------------------------------
 </code></pre>
 </details>
 
-<details><summary>
-Add Node</summary>
+---
+
+<details>
+  <summary>Add Node</summary>
 <pre><code>
 $ cat inventory/mycluster/hosts.yaml
 all:
@@ -8088,6 +8091,7 @@ node4   Ready    <none>                 28s   v1.22.8
 </code></pre>
 </details>
 
+---
 
 <details><summary>
 Remove Node</summary>
