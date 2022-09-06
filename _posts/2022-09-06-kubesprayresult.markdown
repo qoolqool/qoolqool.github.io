@@ -4,7 +4,7 @@ title:  "Kubespray Howto"
 date:   2022-09-06 12:59:00 +0800
 categories: [linux,ansible,k8s]
 ---
-
+<section>
 <details><summary>
 K8S Cluster Installation</summary>
 <pre><code>
@@ -5621,9 +5621,9 @@ download : download_container | Download image if required ---------------------
 download : download_file | Download item ---------------------------------------------------------------------- 11.66s
 </code></pre>
 </details>
-
+</section>
 ---
-
+<section>
 <details>
   <summary>Add Node</summary>
 <pre><code>
@@ -8090,9 +8090,9 @@ node3   Ready    <none>                 97m   v1.22.8
 node4   Ready    <none>                 28s   v1.22.8
 </code></pre>
 </details>
-
+</section>
 ---
-
+<section>
 <details><summary>
 Remove Node</summary>
 <pre><code>
@@ -8490,3 +8490,4 @@ node2   Ready    <none>                 90m   v1.22.8
 node3   Ready    <none>                 90m   v1.22.8
 </code></pre>
 </details>
+</section>
