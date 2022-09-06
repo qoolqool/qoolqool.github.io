@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Kubespray Howto"
+date:   2022-09-06 12:59:00 +0800
+categories: [linux,ansible,k8s]
+---
 <details><summary>
 K8S Cluster Installation</summary>
 <pre><code>
